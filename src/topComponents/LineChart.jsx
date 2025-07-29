@@ -101,7 +101,7 @@ export default function LineChart() {
                 </div>
                 <div className="d-flex flex-column" style={{ overflow: "scroll" }} >
 
-                    <div style={{ width: "fit-content" }}>
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: "fit-content" }}>
 
                         <svg width={width} height={height} >
                             {/* Grid Lines */}

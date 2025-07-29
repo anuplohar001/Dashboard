@@ -76,7 +76,7 @@ const RevenueThisYear = () => {
                         <option value="2024">2024</option>
                     </select>
                 </div>
-                <div className='border my-2 p-2 d-flex flex-column' style={{ overflow: 'scroll' }}>
+                <div className='border my-2 p-2 d-flex flex-column ' style={{ overflow: 'scroll' }}>
                     <strong className='number'>2.50 M</strong>
                     <svg width={width} height={height} style={{ overflow: "scroll" }}>
                         {/* Grid Lines */}

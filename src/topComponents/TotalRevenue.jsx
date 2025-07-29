@@ -78,10 +78,10 @@ const MonthlyLineChart = () => {
                         <option value="2024">2024</option>
                     </select>
                 </div>
-                <div className='border my-2 p-2 widget-box d-flex flex-column' >
+                <div className='border my-2 p-2 widget-box d-flex flex-column ' >
                     <strong className='number'>254 M</strong>
                     <div style={{ overflow: "scroll" }} className=''>
-                        <div style={{ width: "fit-content" }}>
+                        <div className='d-flex flex-column justify-content-center align-items-center' style={{ width: "43rem" }}>
 
                             <svg width={width} height={height}>
                                 {/* Grid Lines */}
@@ -128,9 +128,9 @@ const MonthlyLineChart = () => {
                                 {data.map((d, i) => (
                                     <text
                                         key={i}
-                                        x={(i / (values.length - 1)) * width + 30}
+                                        x={(i / (values.length - 1)) * width + 60}
                                         // x={values}
-                                        y={7}
+                                        y={10}
                                         textAnchor="middle"
                                         fontSize="10"
                                         fill="#333"

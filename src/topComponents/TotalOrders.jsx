@@ -41,8 +41,8 @@ const TotalOrders = ({ data }) => {
 
     return (
         <div>
-            <div className="totalorders card-container" style={{ height: "43rem" }}>
-                <div className='d-flex justify-content-between align-items-center mb-2'>
+            <div className="totalorders card-container d-flex flex-column justify-content-between align-items-center" style={{ height: "43rem" }}>
+                <div className='d-flex justify-content-between align-items-center mb-2' style={{ width: "100%" }}>
                     <strong>Total Orders Received</strong>
                     <select
                         className="form-select form-select-sm mb-1"
@@ -54,141 +54,146 @@ const TotalOrders = ({ data }) => {
                         <option value="2024">2024</option>
                     </select>
                 </div>
-                <div className="widget-box d-flex flex-column" style={{ overflow: "scroll" }}>
-                    <div className="number">75
-                        <div className="desc">Sales Orders</div>
-                    </div>
 
-                    <svg width={550} height={height} className=''>
-                        {/* Grid Lines */}
-                        <line x1="0" y1={height / 4} x2="100%" y2={height / 4} className="grid-line" />
-                        <line x1="0" y1={height / 2} x2="100%" y2={height / 2} className="grid-line" />
-                        <line x1="0" y1={(3 * height) / 4} x2="100%" y2={(3 * height) / 4} className="grid-line" />
-                        <line x1="0" y1={height} x2="100%" y2={height} className="grid-line" />
+                <div className='d-flex flex-column ' style={{ width: "100%", overflow: "scroll" }}>
+                    <div className="widget-box d-flex flex-column" style={{ width: "fit-content" }}>
+                        <div className="number">75
+                            <div className="desc">Sales Orders</div>
+                        </div>
 
-                        {/* Y-axis Labels in Millions */}
-                        <text x="0" y={height / 4 - 5} fontSize="10" fill="#666">30</text>
-                        <text x="0" y={height / 2 - 5} fontSize="10" fill="#666">20</text>
-                        <text x="0" y={(3 * height) / 4 - 5} fontSize="10" fill="#666">10</text>
-                        <text x="0" y={height - 5} fontSize="10" fill="#666">0</text>
+                        <div className=' d-flex flex-column justify-content-center align-items-center' style={{ width: "40rem" }}>
+                            <svg width={550} height={height} >
+                                {/* Grid Lines */}
+                                <line x1="0" y1={height / 4} x2="100%" y2={height / 4} className="grid-line" />
+                                <line x1="0" y1={height / 2} x2="100%" y2={height / 2} className="grid-line" />
+                                <line x1="0" y1={(3 * height) / 4} x2="100%" y2={(3 * height) / 4} className="grid-line" />
+                                <line x1="0" y1={height} x2="100%" y2={height} className="grid-line" />
 
-                        {/* Data Line */}
-                        <polyline
-                            fill="none"
-                            stroke="#0d6efd"
-                            strokeWidth="2"
-                            points={points.join(" ")}
-                            className="filter-drop-shadow"
-                            style={{ pointerEvents: 'stroke' }}
-                        />
+                                {/* Y-axis Labels in Millions */}
+                                <text x="0" y={height / 4 - 5} fontSize="10" fill="#666">30</text>
+                                <text x="0" y={height / 2 - 5} fontSize="10" fill="#666">20</text>
+                                <text x="0" y={(3 * height) / 4 - 5} fontSize="10" fill="#666">10</text>
+                                <text x="0" y={height - 5} fontSize="10" fill="#666">0</text>
 
-                        {/* Circles on Data Points */}
-                        {points.map((p, i) => {
-                            const [x, y] = p.split(",");
-                            return (
-                                <circle
-                                    key={i}
-                                    cx={x}
-                                    cy={y}
-                                    r="3"
-                                    fill="#0d6efd"
-                                    onMouseEnter={() => setHovered(true)}
-                                    onMouseLeave={() => setHovered(false)}
-                                    onMouseMove={(e) => handleMouseMove(e, `${data[i].label}: ${values[i]}`)}
+                                {/* Data Line */}
+                                <polyline
+                                    fill="none"
+                                    stroke="#0d6efd"
+                                    strokeWidth="2"
+                                    points={points.join(" ")}
+                                    className="filter-drop-shadow"
+                                    style={{ pointerEvents: 'stroke' }}
                                 />
-                            );
-                        })}
-                    </svg>
 
-                    <div className='myborder' style={{width:"35rem"}}>
-                        <svg height={15} width="fit-content" className='font-bold myborder'>
-                            {data.map((d, i) => (
-                                <text
-                                    key={i}
-                                    x={(i / (values.length - 1)) * 490 + 25}
-                                    y={7}
-                                    textAnchor="middle"
-                                    fontSize="10"
-                                    fill="#333"
-                                    startOffset="25%"
-                                >
-                                    {d.label}
-                                </text>
-                            ))}
-                        </svg>
-                    </div>
-                </div>
-
-                <div style={{ overflow: "scroll" }}>
-                    <div style={{ width: "fit-content" }}>
-                        <svg width={550} height="330">
-                            {/* Y-axis Label (Rotated) */}
-                            <text
-                                x="-210"
-                                y="10"
-                                transform="rotate(-90)"
-                                fontSize="14"
-                                fill="#000"
-                            >
-                                No. of Orders
-                            </text>
-
-                            {[0, 10, 20, 30, 40, 50].map((val, idx) => {
-                                const chartHeight = 300;
-                                const y = chartHeight - (val / 50) * chartHeight + 13;
-                                return (
-                                    <g key={idx}>
-                                        <line
-                                            x1="30"
-                                            y1={y}
-                                            x2="98%"
-                                            y2={y}
-                                            stroke="#ccc"
-                                            strokeDasharray="2 2"
-                                        />
-                                        <text x="18" y={y + 5} fontSize="12" fill="#666" fontWeight="bold">
-                                            {val}
-                                        </text>
-                                    </g>
-                                );
-                            })}
-
-                            {/* Bars + X-axis Labels */}
-                            {barData.map((v, i) => {
-                                const barWidth = 26;
-                                const spacing = 15;
-                                const chartHeight = 300;
-                                const x = 45 + i * (barWidth + spacing);
-                                const height = (v / 50) * chartHeight;
-                                return (
-                                    <g key={i}>
-                                        <rect
-                                            className="hovered"
-                                            x={x}
-                                            y={chartHeight - height + 13}
-                                            width="5%"
-                                            height={height}
+                                {/* Circles on Data Points */}
+                                {points.map((p, i) => {
+                                    const [x, y] = p.split(",");
+                                    return (
+                                        <circle
+                                            key={i}
+                                            cx={x}
+                                            cy={y}
+                                            r="3"
                                             fill="#0d6efd"
                                             onMouseEnter={() => setHovered(true)}
                                             onMouseLeave={() => setHovered(false)}
-                                            onMouseMove={(e) => handleMouseMove(e, `${data[i].label}: ${barData[i]}`)}
+                                            onMouseMove={(e) => handleMouseMove(e, `${data[i].label}: ${values[i]}`)}
                                         />
-                                        <text
-                                            x={x + barWidth / 2}
-                                            y={chartHeight + 29}
-                                            fontSize="10"
-                                            textAnchor="middle"
-                                            fill="#000"
-                                            fontWeight="bold"
-                                        >
-                                            {data[i].label}
-                                        </text>
-                                    </g>
-                                );
-                            })}
-                        </svg>
+                                    );
+                                })}
+                            </svg>
+
+
+                            <svg height={15} width={550} className='font-bold'>
+                                {data.map((d, i) => (
+                                    <text
+                                        key={i}
+                                        x={(i / (values.length - 1)) * 490 + 25}
+                                        y={7}
+                                        textAnchor="middle"
+                                        fontSize="10"
+                                        fill="#333"
+                                        startOffset="25%"
+                                    >
+                                        {d.label}
+                                    </text>
+                                ))}
+                            </svg>
+                        </div>
                     </div>
 
+                    <div className='widget-box' style={{ width: "fit-content" }}>
+                        <div className=' d-flex flex-column justify-content-center align-items-center' style={{ width: "40rem" }}>
+                            <svg width={550} height="330">
+                                {/* Y-axis Label (Rotated) */}
+                                <text
+                                    x="-210"
+                                    y="10"
+                                    transform="rotate(-90)"
+                                    fontSize="14"
+                                    fill="#000"
+                                >
+                                    No. of Orders
+                                </text>
+
+                                {[0, 10, 20, 30, 40, 50].map((val, idx) => {
+                                    const chartHeight = 300;
+                                    const y = chartHeight - (val / 50) * chartHeight + 13;
+                                    return (
+                                        <g key={idx}>
+                                            <line
+                                                x1="30"
+                                                y1={y}
+                                                x2="98%"
+                                                y2={y}
+                                                stroke="#ccc"
+                                                strokeDasharray="2 2"
+                                            />
+                                            <text x="18" y={y + 5} fontSize="12" fill="#666" fontWeight="bold">
+                                                {val}
+                                            </text>
+                                        </g>
+                                    );
+                                })}
+
+                                {/* Bars + X-axis Labels */}
+                                {barData.map((v, i) => {
+                                    const barWidth = 26;
+                                    const spacing = 15;
+                                    const chartHeight = 300;
+                                    const x = 45 + i * (barWidth + spacing);
+                                    const height = (v / 50) * chartHeight;
+                                    return (
+                                        <g key={i}>
+                                            <rect
+                                                className="hovered"
+                                                x={x}
+                                                y={chartHeight - height + 13}
+                                                width="5%"
+                                                height={height}
+                                                fill="#0d6efd"
+                                                onMouseEnter={() => setHovered(true)}
+                                                onMouseLeave={() => setHovered(false)}
+                                                onMouseMove={(e) => handleMouseMove(e, `${data[i].label}: ${barData[i]}`)}
+                                            />
+                                            <text
+                                                x={x + barWidth / 2}
+                                                y={chartHeight + 29}
+                                                fontSize="10"
+                                                textAnchor="middle"
+                                                fill="#000"
+                                                fontWeight="bold"
+                                            >
+                                                {data[i].label}
+                                            </text>
+                                        </g>
+                                    );
+                                })}
+                            </svg>
+                        </div>
+
+
+                    </div>
 
                 </div>
 

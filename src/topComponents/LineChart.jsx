@@ -21,15 +21,15 @@ export default function LineChart() {
     const height = 200;
     const max = Math.max(...data);
     const points = data.map((d, i) => {
-        const x = (i / (data.length - 1)) * width + 20; // Adjusting for spacing
-        const y = height - (d / max) * height;
+        const x = (i / (data.length - 1)) * 600 + 20; // Adjusting for spacing
+        const y = height - (d / max) * height + 10;
         return `${x},${y}`;
     });
 
     const dispatchData = [40, 30, 50, 60, 80, 10, 50, 60, 80, 10, 50, 60];
     const dispatched = dispatchData.map((d, i) => {
-        const x = (i / (data.length - 1)) * width + 20; // Adjusting for spacing
-        const y = height - (d / max) * height;
+        const x = (i / (data.length - 1)) * 600 + 20; // Adjusting for spacing
+        const y = height - (d / max) * height + 10;
         return `${x},${y}`;
     });
     const [hovered, setHovered] = useState(false)
@@ -143,7 +143,7 @@ export default function LineChart() {
                             {trendData.map((item, i) => (
                                 <text
                                     key={i}
-                                    x={(i / (data.length - 1)) * width + 20}  // Adjust spacing as per your data points
+                                    x={(i / (data.length - 1)) * 600 + 20}  // Adjust spacing as per your data points
                                     y={10}
                                     fontSize="10"
                                     fill="#666"

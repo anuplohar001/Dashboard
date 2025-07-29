@@ -11,7 +11,7 @@ const TotalOrders = ({ data }) => {
     const [selectedPeriod, setSelectedPeriod] = useState('current');
 
     const width = 530;
-    const chartWidth = 410;
+    const chartWidth = 490;
     const height = 150;
 
 
@@ -59,7 +59,7 @@ const TotalOrders = ({ data }) => {
                         <div className="desc">Sales Orders</div>
                     </div>
 
-                    <svg width={450} height={height} className=''>
+                    <svg width={550} height={height} className=''>
                         {/* Grid Lines */}
                         <line x1="0" y1={height / 4} x2="100%" y2={height / 4} className="grid-line" />
                         <line x1="0" y1={height / 2} x2="100%" y2={height / 2} className="grid-line" />
@@ -100,26 +100,28 @@ const TotalOrders = ({ data }) => {
                         })}
                     </svg>
 
-                    <svg height={15} width={450} className='font-bold'>
-                        {data.map((d, i) => (
-                            <text
-                                key={i}
-                                x={(i / (values.length - 1)) * chartWidth + 25}
-                                y={7}
-                                textAnchor="middle"
-                                fontSize="10"
-                                fill="#333"
-                                startOffset="25%"
-                            >
-                                {d.label}
-                            </text>
-                        ))}
-                    </svg>
+                    <div className='myborder' style={{width:"35rem"}}>
+                        <svg height={15} width="fit-content" className='font-bold myborder'>
+                            {data.map((d, i) => (
+                                <text
+                                    key={i}
+                                    x={(i / (values.length - 1)) * 490 + 25}
+                                    y={7}
+                                    textAnchor="middle"
+                                    fontSize="10"
+                                    fill="#333"
+                                    startOffset="25%"
+                                >
+                                    {d.label}
+                                </text>
+                            ))}
+                        </svg>
+                    </div>
                 </div>
 
-                <div  style={{ overflow: "scroll" }}>
-                    <div>
-                        <svg width={450} height="330">
+                <div style={{ overflow: "scroll" }}>
+                    <div style={{ width: "fit-content" }}>
+                        <svg width={550} height="330">
                             {/* Y-axis Label (Rotated) */}
                             <text
                                 x="-210"

@@ -1,0 +1,321 @@
+/* Hide scrollbars for all elements with overflow scroll */
+* {
+    /* For Webkit browsers (Chrome, Safari, Edge) */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for Webkit browsers */
+}
+
+/* Alternative: Target specific classes if you don't want global styling */
+.hide-scrollbar {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for Webkit browsers */
+}
+
+/* Or target elements with overflow scroll specifically */
+[style*="overflow: scroll"],
+[style*="overflow-x: scroll"],
+[style*="overflow-y: scroll"] {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+[style*="overflow: scroll"]::-webkit-scrollbar,
+[style*="overflow-x: scroll"]::-webkit-scrollbar,
+[style*="overflow-y: scroll"]::-webkit-scrollbar {
+    display: none;
+}
+
+
+.mycontainer {
+    /* width: fit-content; */
+    /* margin: 0 auto; */
+    padding: 30px;
+    background-color: #bedbf8;
+}
+
+.myborder {
+    border: solid 2px black;
+}
+.charts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.donut {
+    text-align: center;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    /* border: solid 2px black; */
+}
+
+.hover-text {
+    width: 30px;
+}
+
+.donut-chart-expand {
+    width: 340px;
+    height: 340px;
+}
+
+.donut-chart {
+    width: 140px;
+    height: 140px;
+}
+
+.donut-ring {
+    fill: none;
+    stroke: #0d6efd;
+    stroke-width: 5;
+    transition: stroke 500ms ease-out;
+}
+
+.donut-ring:hover {
+    stroke: #003e9b;
+}
+
+.donut-segment {
+    fill: none;
+    stroke: #fc630a;
+    stroke-width: 5;
+    stroke-linecap: square;
+    transition: stroke 0.5s ease;
+}
+
+.donut-segment:hover {
+    stroke: #ff1e00;
+}
+
+.hovered {
+    transition: fill 0.6s ease;
+}
+
+.hovered:hover {
+    fill: #003e9b
+}
+
+.donut-text {
+    font-size: 4px;
+    font-weight: bold;
+    fill: rgb(44, 44, 44);
+    text-anchor: middle;
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.donut-legend {
+    margin-top: 10px;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.delayed {
+    background-color: #fc630a;
+}
+
+.ontime {
+    background-color: #0d6efd;
+}
+
+.line-chart {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+
+.line-caption {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+
+.fgline {
+    margin: 4px;
+    height: 10px;
+    width: 10px;
+    border-bottom: solid 2px #fc630a;
+}
+
+.symbol {
+    border-bottom: solid 2px #0d6efd
+}
+
+.line-title {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-line {
+    margin-bottom: 5px;
+    stroke: #818181;
+    stroke-width: 0.5;
+}
+
+
+
+.data-table {
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 15px;
+    /* border-collapse: collapse; */
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ccc;
+    padding: 5px 5px;
+    border-radius: 15px;
+}
+
+.data-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+/* Total cost */
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.widget-box {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.number {
+    font-size: 20px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.filter-drop-shadow {
+    filter: drop-shadow(2px 10px 6px rgba(0, 0, 0, .7));
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.caption {
+    font-size: 0.75rem;
+    color: #444;
+}
+
+.card-container {
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    animation: fadeSlideIn 2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(10) translateX(10px);
+    }
+}
+
+
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1rem;
+    padding: 1rem;
+    height: max-content;
+}
+
+.table-group-divider {
+    font-size: x-small;
+    width: fit-content;
+}
+
+.bottom-info {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.x-axis-label {
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.axis-container {
+    position: relative;
+    height: 80px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.expanded {
+    position: fixed;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    width: 90vw;
+    height: 90vh;
+    overflow: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    border-radius: 10px;
+}
+

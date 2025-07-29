@@ -1,0 +1,137 @@
+/* Small devices */
+@media (max-width: 600px) {
+
+    .smallpie,
+    .barpareto,
+    .totalorders,
+    .toppareto,
+    .prodcharts,
+    .mycards,
+    .salescards,
+    .saleslines,
+    .salesbars,
+    .quotationwin,
+    .topcustomers,
+    .revenuecurrent,
+    .salestopcustomers,
+    .purchasecards,
+    .tables,
+    .oee,
+    .totalrevenue,
+    .linechart {
+        width: 90vw;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .tables,
+    .paretocharts,
+    .oee,
+    .revenuecurrent,
+    .saleslines,
+    .linechart,
+    .totalorders,
+    .scheduleadhe,
+    .topcustomers {
+        width: 90vw;
+    }
+
+    .prodcharts {
+        width: 45vw;
+    }
+
+    .mycards {
+        width: 43vw;
+    }
+
+    .barpareto {
+        width: 43vw;
+    }
+
+    .smallpie {
+        width: 45vw;
+    }
+
+    .salesbars,
+    .salestopcustomers {
+        width: 43vw;
+    }
+}
+
+@media (min-width: 1110px) {
+
+
+    .revenuecurrent {
+        width: 48vw;
+    }
+
+    .linechart {
+        width: 49vw;
+    }
+
+    .totalorders {
+        width: 42vw;
+    }
+
+    .barpareto {
+        width: 32vw;
+    }
+
+    .oee {
+        width: 49vw;
+    }
+
+    .totalrevenue {
+        width: 45vw;
+    }
+
+    .topcustomers {
+        width: 55vw;
+    }
+
+    /* Product Management */
+
+
+
+    .operatorperformance {
+        width: 35vw;
+    }
+
+    .scheduleadhe {
+        width: 55vw;
+    }
+
+    .planvsactual {
+        width: 28vw;
+    }
+
+    .machineutilization {
+        width: 36vw;
+    }
+
+    .salestopcustomers {
+        width: 42vw;
+    }
+
+    .saleslines {
+        width: 68vw;
+    }
+
+    .pendingquote {
+        width: 40vw;
+    }
+
+    .onlycards {
+        width: 23vw;
+    }
+
+    .salesbars {
+        width: 33vw;
+    }
+
+    .salescards {
+        width: 25vw;
+    }
+}

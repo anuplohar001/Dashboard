@@ -1,0 +1,68 @@
+
+
+.anup {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    animation: fadeSlideIn 2s ease-out forwards;
+    opacity: 0;
+    position: relative;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(10) translateX(10px);
+    }
+}
+
+.anup:hover {
+    transform: translateY(-1px) translateX(-1px);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.pie-slice {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.pie-slice:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.pie-label {
+    fill: #333;
+    font-weight: bold;
+}
+
+/* slaes forcast */
+.line-chart-svg {
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.legend {
+    font-size: 12px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.forecast {
+    background-color: #3498db;
+}
+
+.actual {
+    background-color: #e74c3c;
+}
+
+@media (min-width: 1145px) {
+    .large-screen {
+        display: none;
+    }
+}

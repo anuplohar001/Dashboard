@@ -53,7 +53,7 @@ const HomePage = () => {
 
     const quickStats = [
         { label: 'Active Users', value: '24,891', change: '+12%', icon: Activity },
-        { label: 'Revenue', value: '$847K', change: '+8.2%', icon: TrendingUp },
+        { label: 'Revenue', value: '₹847K', change: '+8.2%', icon: TrendingUp },
         { label: 'Products', value: '1,249', change: '+3.1%', icon: Package },
         { label: 'Analytics', value: '156', change: '+24%', icon: BarChart3 }
     ];

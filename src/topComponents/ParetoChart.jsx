@@ -318,7 +318,7 @@ const ParetoChart = () => {
                                     fill="#6c757d"
                                     transform={`rotate(90 ${margin.left + innerWidth + 35} ${margin.top + innerHeight / 2})`}
                                 >
-                                    Cumulative (%)
+                                    Rework Rate (%)
                                 </text>
                             </svg>
 
@@ -334,7 +334,7 @@ const ParetoChart = () => {
                         </div>
                         <div className="d-flex align-items-center">
                             <div className="me-2" style={{ width: '12px', height: '2px', backgroundColor: '#dc3545' }}></div>
-                            <span style={{ fontSize: '11px' }}>Cumulative %</span>
+                            <span style={{ fontSize: '11px' }}>Rework Rate %</span>
                         </div>
                     </div>
                 </div>

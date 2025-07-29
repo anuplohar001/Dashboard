@@ -218,7 +218,7 @@ const ProductionCostChart = () => {
                                                             fill="#374151"
                                                             fontWeight="bold"
                                                         >
-                                                            ${item.totalCost}
+                                                            ₹{item.totalCost}
                                                         </text>
 
                                                         {/* X-axis labels */}
@@ -249,7 +249,7 @@ const ProductionCostChart = () => {
                                                 fontWeight="600"
                                                 transform={`rotate(-90 20 ${chartHeight / 2})`}
                                             >
-                                                Cost ($)
+                                                Cost (₹)
                                             </text>
 
                                             {/* X-axis label */}
@@ -277,11 +277,11 @@ const ProductionCostChart = () => {
                                     <thead className='table-light'>
                                         <tr>
                                             <th>Work Order</th>
-                                            <th>Machine Cost ($)</th>
-                                            <th>Material Cost ($)</th>
-                                            <th>Labor Cost ($)</th>
-                                            <th>Rework Cost ($)</th>
-                                            <th className="text-primary fw-bold">Total Cost ($)</th>
+                                            <th>Machine Cost (₹)</th>
+                                            <th>Material Cost (₹)</th>
+                                            <th>Labor Cost (₹)</th>
+                                            <th>Rework Cost (₹)</th>
+                                            <th className="text-primary fw-bold">Total Cost (₹)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -290,11 +290,11 @@ const ProductionCostChart = () => {
                                             return (
                                                 <tr key={item.workOrder} className={hoveredBar === index ? 'table-warning' : ''}>
                                                     <td className="fw-bold">{item.workOrder}</td>
-                                                    <td>${breakdown.machineTimeCost.toFixed(2)}</td>
-                                                    <td>${breakdown.materialCost.toFixed(2)}</td>
-                                                    <td>${item.labor}</td>
-                                                    <td>${item.rework}</td>
-                                                    <td className="fw-bold text-primary">${item.totalCost}</td>
+                                                    <td>₹{breakdown.machineTimeCost.toFixed(2)}</td>
+                                                    <td>₹{breakdown.materialCost.toFixed(2)}</td>
+                                                    <td>₹{item.labor}</td>
+                                                    <td>₹{item.rework}</td>
+                                                    <td className="fw-bold text-primary">₹{item.totalCost}</td>
                                                 </tr>
                                             );
                                         })}
@@ -302,7 +302,7 @@ const ProductionCostChart = () => {
 
                                 </table>
                                 <div className='fw-bold '>
-                                    Total Production Cost : <span className="text-primary">${data.reduce((sum, item) => sum + item.totalCost, 0).toLocaleString()}</span>
+                                    Total Production Cost : <span className="text-primary">₹{data.reduce((sum, item) => sum + item.totalCost, 0).toLocaleString()}</span>
                                 </div>
                             </div>
 
@@ -330,15 +330,14 @@ const ProductionCostChart = () => {
                     <span>
                         {data[hoveredBar].workOrder} &nbsp;
                     </span>
-                    {console.log(hoveredBar)}
                     <span>
-                        Machine: ${(data[hoveredBar].machineTime * data[hoveredBar].machineRate).toFixed(0)} &nbsp;
+                        Machine: ₹{(data[hoveredBar].machineTime * data[hoveredBar].machineRate).toFixed(0)} &nbsp;
                     </span>
                     <span>
-                        Material: ${(data[hoveredBar].materialQty * data[hoveredBar].materialRate).toFixed(0)} &nbsp;
+                        Material: ₹{(data[hoveredBar].materialQty * data[hoveredBar].materialRate).toFixed(0)} &nbsp;
                     </span>
                     <span>
-                        Labor: ${data[hoveredBar].labor} | Rework: ${data[hoveredBar].rework}
+                        Labor: ₹{data[hoveredBar].labor} | Rework: ₹{data[hoveredBar].rework}
                     </span>
                 </div>
 

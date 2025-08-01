@@ -34,49 +34,57 @@ const ProductManagement = () => {
 
 
   return (
-    <div className='text-center' style={{ height: "fit-content", padding: "20px", backgroundColor: "#e3e5e8" }}>
+    <div className='d-flex' style={{width:"fit-content"}}>
+      <div style={{width:"280px", height:"100vh"}}>
 
-      <div className='h1 fw-bold'>
-        Product Management <br />
       </div>
-      <div className='h4 pb-3'>Product analytics, inventory tracking, and market insights</div>
+      <div>
+        <div className='text-center' style={{ height: "fit-content", padding: "20px", backgroundColor: "#e3e5e8" }}>
 
-
-      <div className="d-flex flex-column gap-4" >
-        <div className='d-flex gap-4 flex-wrap justify-content-center'>
-          <DefectRatePareto />
-          <BottleneckIdentificationChart />
-          <div className={`d-flex  gap-4 ${isColumn ? ' flex-column' : ''}`} >
-            <DowntimeByMachineChart />
-            <WorkOrderAging />
+          <div className='h1 fw-bold'>
+            Product Management <br />
           </div>
-        </div>
-        <div>
-          <div className='d-flex gap-4 flex-wrap justify-content-center' >
-            <MachineUtilizationChart />
-            <WorkOrderDelayChart />
-          </div>
-        </div>
-        <div className='d-flex gap-4 flex-wrap justify-content-center' >
+          <div className='h4 pb-3'>Product analytics, inventory tracking, and market insights</div>
 
-          <div className={`d-flex  gap-4 ${isColumn ? ' flex-column' : ''}`} >
-            <OperatorPerformanceChart />
-            <WIPLoadChart />
-          </div>
 
-          <div className='d-flex flex-column gap-4' >
-            <div className='d-flex gap-4 flex-wrap justify-content-center' >
-              <ReworkRateChart />
-              <OperationTimeChart />
+          <div className="d-flex flex-column gap-4" >
+            <div className='d-flex gap-4 flex-wrap justify-content-center'>
+              <DefectRatePareto />
+              <BottleneckIdentificationChart />
+              <div className={`d-flex  gap-4 ${isColumn ? "flex-column" : ""}`} >
+                <DowntimeByMachineChart />
+                <WorkOrderAging />
+              </div>
             </div>
-            <ScheduleAdherenceChart />
+            <div>
+              <div className='d-flex gap-4 flex-wrap justify-content-center' >
+                <MachineUtilizationChart />
+                <WorkOrderDelayChart />
+              </div>
+            </div>
+            <div className='d-flex gap-4 flex-wrap justify-content-center' >
+
+              <div className={`d-flex  gap-4 ${isColumn ? ' flex-column' : ''}`} >
+                <OperatorPerformanceChart />
+                <WIPLoadChart />
+              </div>
+
+              <div className='d-flex flex-column gap-4' >
+                <div className='d-flex gap-4 flex-wrap justify-content-center' >
+                  <ReworkRateChart />
+                  <OperationTimeChart />
+                </div>
+                <ScheduleAdherenceChart />
+              </div>
+            </div>
           </div>
+
+
+
+
         </div>
+
       </div>
-
-
-
-
     </div>
   )
 }

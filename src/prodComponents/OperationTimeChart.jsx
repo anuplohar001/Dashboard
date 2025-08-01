@@ -66,7 +66,7 @@ const OperationTimeChart = () => {
 
     return (
         <div className='prodcharts'>
-            <div className="card-container planvsactual" style={{ height:"30", border: '1px solid #dee2e6' }}>
+            <div className="card-container planvsactual" style={{ height:"31rem", border: '1px solid #dee2e6' }}>
                 <div className="card-body">
                     {/* Title */}
                     <div className="mb-3 d-flex justify-content-between align-items-center">

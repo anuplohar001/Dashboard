@@ -53,8 +53,8 @@ const DowntimeTrendOverTime = () => {
 
 
     return (
-        <div>
-            <div className="linechart card-container" style={{
+        <div className='col-lg-12 col-md-12 col-12'>
+            <div className=" card-container" style={{
                 border: '1px solid #dee2e6',
                 transition: 'all 0.3s ease',
                 transform: hoveredCard ? 'translateY(-2px)' : 'translateY(0)',
@@ -64,7 +64,7 @@ const DowntimeTrendOverTime = () => {
 
             }}>
                 <div className='d-flex justify-content-between align-items-center mb-2'>
-                    <strong className="card-title">Downtime Trend Over Time</strong>
+                    <h6 style={{ textAlign: "left", fontWeight: '600' }} className="card-title">Downtime Trend Over Time</h6>
                     <select
                         className="form-select form-select-sm mb-1"
                         style={{ width: '75px', fontSize: '10px', padding: '2px 4px' }}
@@ -94,7 +94,7 @@ const DowntimeTrendOverTime = () => {
                         <polyline
                             fill="none"
                             stroke="#0d6efd"
-                            strokeWidth="2"
+                            strokeWidth="1"
                             points={points.join(" ")}
                             className="filter-drop-shadow"
                             style={{ pointerEvents: 'stroke' }}

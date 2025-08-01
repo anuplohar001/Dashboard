@@ -85,10 +85,10 @@ export default function MeanTimesLineChart() {
 
     return (
 
-        <div className="linechart">
+        <div className=" col-lg-12 col-md-12 col-12">
             <div className="card-container d-flex flex-column ">
-                <div className='d-flex justify-content-between align-items-center mb-2'>
-                    <h6>Mean Time to Repair VS Mean Time Between Failures.</h6>
+                <div className='d-flex justify-content-between mb-2 '>
+                    <h6 style={{ textAlign: "left", fontWeight: '600' }}>Mean Time to Repair VS Mean Time Between Failures.</h6>
                     <select
                         className="form-select form-select-sm mb-1"
                         style={{ width: '75px', fontSize: '10px', padding: '2px 4px' }}
@@ -120,7 +120,7 @@ export default function MeanTimesLineChart() {
 
 
                             {/* FG Line */}
-                            <polyline fill="none" stroke="#fc630a" strokeWidth="2" points={dispatched.join(" ")} />
+                            <polyline fill="none" stroke="#fc630a" strokeWidth="1" points={dispatched.join(" ")} />
                             {dispatched.map((p, i) => {
                                 const [x, y] = p.split(",");
                                 return <circle key={i} cx={x} cy={y} r="3" fill="#fc630a"
@@ -130,7 +130,7 @@ export default function MeanTimesLineChart() {
                             })}
 
                             {/* Dispatched Line */}
-                            <polyline fill="none" stroke="#0d6efd" strokeWidth="2" points={points.join(" ")} />
+                            <polyline fill="none" stroke="#0d6efd" strokeWidth="1" points={points.join(" ")} />
                             {points.map((p, i) => {
                                 const [x, y] = p.split(",");
                                 return <circle key={i} cx={x} cy={y} r="3" fill="#0d6efd"

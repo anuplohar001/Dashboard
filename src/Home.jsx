@@ -1,4 +1,7 @@
-import { BarChart3, TrendingUp, Users, Package, ArrowRight, Activity, PieChart, LineChart } from 'lucide-react';
+import { BarChart3, LineChart } from 'lucide-react';
+
+
+import { Activity, ArrowRight, BarChart2, Package, PieChart, TrendingUp, Users } from 'react-feather';
 import './home.css'
 import { Link } from 'react-router-dom';
 
@@ -55,7 +58,7 @@ const HomePage = () => {
         { label: 'Active Users', value: '24,891', change: '+12%', icon: Activity },
         { label: 'Revenue', value: '₹847K', change: '+8.2%', icon: TrendingUp },
         { label: 'Products', value: '1,249', change: '+3.1%', icon: Package },
-        { label: 'Analytics', value: '156', change: '+24%', icon: BarChart3 }
+        { label: 'Analytics', value: '156', change: '+24%', icon: BarChart2 }
     ];
 
     return (
@@ -81,7 +84,7 @@ const HomePage = () => {
                                 <div className="d-flex gap-3">
                                     <PieChart className="text-primary" size={32} />
                                     <LineChart className="text-info" size={32} />
-                                    <BarChart3 className="text-success" size={32} />
+                                    <BarChart2 className="text-success" size={32} />
                                 </div>
                             </div>
                         </div>

@@ -114,7 +114,7 @@ const ProductionCostChart = () => {
     const innerWidth = chartWidth - margin.left - margin.right;
     const innerHeight = chartHeight - margin.top - margin.bottom;
 
-    const barWidth = innerWidth / data.length * 0.8;
+    const barWidth = innerWidth / data.length * 0.5;
     const barSpacing = innerWidth / data.length * 0.2;
 
 
@@ -142,9 +142,9 @@ const ProductionCostChart = () => {
     };
 
     return (
-        <div className="">
+        <div className="prodchart">
             <div className="row">
-                <div className='card-container myborder' style={{ width: "92vw" }}>
+                <div className='card-container myborder'>
                     <div className="">
                         <h6 className="m-1">Production Cost per Job</h6>
                         <div className="card-body d-flex flex-wrap gap-4 justify-content-evenly align-items-center" >

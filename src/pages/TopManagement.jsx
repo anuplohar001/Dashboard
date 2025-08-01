@@ -50,43 +50,49 @@ const TopManagement = () => {
 
 
     return (
-        <div className="mycontainer" style={{ backgroundColor: "#e3e5e8" }}>
-            <div className='h1 fw-bold text-center'>
-                Top Management
+        <div className='d-flex '>
+            <div className='' style={{ width: "280px" }}>
+
             </div>
-            <div className='h4 pb-3 text-center'>Executive dashboards, KPIs, and strategic analytics</div>
-            <div className="d-flex flex-column gap-4" >
-                <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                    <MonthlyLineChart />
-                    <WODelayRate data={sampleData} expandedCard={expandedCard} />
-                    <RegionWiseSalesPieChart />
+
+            <div className='' style={{width:"80vw", backgroundColor: "#e3e5e8" }}>
+                <div className='h1 fw-bold text-center'>
+                    Top Management
                 </div>
-                <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                    <div className='d-flex flex-column gap-3 justify-content-center'>
-                        <TotalOrders data={trendData} />
-                        <ReceivablesAgingTable name={"Payables"} />
+                <div className='h4 pb-3 text-center'>Executive dashboards, KPIs, and strategic analytics</div>
+                <div className="d-flex flex-column gap-4" >
+                    <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                        <MonthlyLineChart />
+                        <WODelayRate data={sampleData} expandedCard={expandedCard} />
+                        <RegionWiseSalesPieChart />
                     </div>
-                    <div className='d-flex flex-column gap-3 justify-content-center'>
-                        <div className='d-flex gap-3 flex-column flex-wrap justify-content-center'>
-                            <PayableAgingTable />
-                            <OEEHeatmap />
+                    <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                        <div className='d-flex flex-column gap-3 justify-content-center'>
+                            <TotalOrders data={trendData} />
+                            <ReceivablesAgingTable name={"Payables"} />
                         </div>
-                        <LineChart />
+                        <div className='d-flex flex-column gap-3 justify-content-center'>
+                            <div className='d-flex gap-3 flex-column flex-wrap justify-content-center'>
+                                <PayableAgingTable />
+                                <OEEHeatmap />
+                            </div>
+                            <LineChart />
+                        </div>
                     </div>
-                </div>
-                <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                    <ProductionCostChart/>
-                    <RevenueThisYear />
-                    <TotalRevenue />
-                </div>
-                <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                    <TopCustomersChart />
-                    <ParetoChart />
-                    
-                </div>
+                    <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                        <ProductionCostChart />
+                        <RevenueThisYear />
+                        <TotalRevenue />
+                    </div>
+                    <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                        <TopCustomersChart />
+                        <ParetoChart />
+
+                    </div>
 
 
 
+                </div>
             </div>
         </div>
     )

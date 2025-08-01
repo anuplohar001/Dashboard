@@ -95,8 +95,8 @@ const WIPLoadChart = () => {
     };
 
     return (
-        <div className='prodcharts'>
-            <div className="card-container anup operatorperformance" style={{ overflow: "scroll", height:"30rem", border: '1px solid #dee2e6' }}>
+        <div className='wipload'>
+            <div className="card-container anup " style={{ overflow: "scroll", height:"30rem", border: '1px solid #dee2e6' }}>
                 <div className="card-body">
                     {/* Header */}
                     <div className="d-flex justify-content-between align-items-center">

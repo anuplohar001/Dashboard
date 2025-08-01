@@ -100,7 +100,7 @@ const DefectRatePareto = () => {
 
     return (
         <div>
-            <div className="card-container anup prodcharts" style={{ border: '1px solid #dee2e6' }}>
+            <div className="card-container anup defectrate" style={{ border: '1px solid #dee2e6' }}>
                 <div className="card-body">
                     {/* Title */}
                     <div className="mb-3 d-flex justify-content-between align-items-center">

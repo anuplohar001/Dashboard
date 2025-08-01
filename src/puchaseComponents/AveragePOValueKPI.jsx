@@ -63,13 +63,13 @@ const AveragePOValueKPI = () => {
 
     return (
         <div
-            className="d-flex flex-column purchasecards p-2"
+            className="d-flex flex-column avgpurchase p-2"
             style={{
                 height: '35rem',
             }}
         >
-            <div className="card shadow-sm h-100">
-                <div style={{paddingTop: '20px'}} >
+            <div className="card-container shadow-sm h-100">
+                <div >
                     <h6 className="mb-0">Average Purchase Order Value</h6>
                 </div>
                 <div className="card-body d-flex flex-column" style={{overflow:"scroll"}}>

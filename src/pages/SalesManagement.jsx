@@ -38,54 +38,57 @@ const SalesManagement = () => {
 
 
     return (
-        <div className='text-center' style={{
-            padding: "1rem",
-            backgroundColor: "#e3e5e8"
-        }}>
+        <div className='' >
+            
+            <div className='text-center' style={{
+                padding: "1rem",
+            }}>
 
-            <div className='h1 fw-bold ' style={{ marginBottom: "40px" }}>
-                Sales Management <br />
-            </div>
-
-            <div className=" d-flex flex-wrap gap-4 justify-content-center" >
-                <div className='d-flex gap-4 flex-wrap justify-content-center'>
-
-                    <div className={`d-flex flex-wrap justify-content-center gap-4 ${isColumn ? ' flex-column' : ''}`} >
-                        <MonthlySalesKPI />
-                        <SalesTargetAchievementKPI />
-                        <TopPerformingSalespersonKPI />
-                        <NewOrdersBookedKPI />
-                    </div>
-                    <div className='d-flex flex-column gap-4 justify-content-center align-items-center'>
-                        <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                            <LostOrderReasonsKPI />
-                            <Top5CustomersKPI />
-                        </div>
-
-                        <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                            <SalesByRegion />
-                            <SalesOrderAging />
-                        </div>
-                        <SalesForecastVsActualKPI />
-                        <MonthlySalesTrendKPI />
-                    </div>
+                <div className='h1 fw-bold ' style={{ marginBottom: "40px" }}>
+                    Sales Management <br />
                 </div>
-                <div className='d-flex gap-4 flex-wrap justify-content-center'>
 
+                <div className=" d-flex flex-wrap gap-4" >
                     <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                        <CustomerOrderFrequencyKPI />
-                        <QuotationWinLossReport />
+
+                        <div className={`d-flex flex-wrap justify-content-center gap-4 ${isColumn ? ' flex-column' : ''}`} >
+                            <MonthlySalesKPI />
+                            <SalesTargetAchievementKPI />
+                            <TopPerformingSalespersonKPI />
+                            <NewOrdersBookedKPI />
+                        </div>
+                        <div className='d-flex flex-column gap-4 justify-content-center align-items-center'>
+                            <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                                <LostOrderReasonsKPI />
+                                <Top5CustomersKPI />
+                            </div>
+
+                            <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                                <SalesByRegion />
+                                <SalesOrderAging />
+                            </div>
+                            <SalesForecastVsActualKPI />
+                            <MonthlySalesTrendKPI />
+                        </div>
                     </div>
-                    <div className='d-flex flex-column justify-content-center'>
-                        <PendingQuotationsAging />
+                    <div className='d-flex gap-4 flex-wrap justify-content-center'>
+
+                        <div className='d-flex gap-4 flex-wrap justify-content-center'>
+                            <CustomerOrderFrequencyKPI />
+                            <QuotationWinLossReport />
+                        </div>
+                        <div className='d-flex flex-column justify-content-center'>
+                            <PendingQuotationsAging />
+                        </div>
                     </div>
+                    <QuoteConversionKPI />
+
                 </div>
-                <QuoteConversionKPI />
+
+
+
 
             </div>
-
-
-
 
         </div>
     )

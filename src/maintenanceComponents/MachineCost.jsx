@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import HoverText from "../topComponents/HoverText"
 
-const MachineUtilizationChart = () => {
+const MachineCostChart = () => {
     // Sample data for machine utilization
     const [machineData, setMachineData] = useState([
-        { id: 'M1', utilization: 93.75 },
-        { id: 'M2', utilization: 85.00 },
-        { id: 'M3', utilization: 90.00 },
-        { id: 'M4', utilization: 70.00 },
-        { id: 'M5', utilization: 60.00 },
-        { id: 'M6', utilization: 97.50 },
-        { id: 'M7', utilization: 80.00 },
-        { id: 'M8', utilization: 40.00 }
+        { id: 'M1', utilization: 15200 },
+        { id: 'M2', utilization: 67800 },
+        { id: 'M3', utilization: 45000 },
+        { id: 'M4', utilization: 99800 },
+        { id: 'M5', utilization: 23400 },
+        { id: 'M6', utilization: 86500 },
+        { id: 'M7', utilization: 39200 },
+        { id: 'M8', utilization: 11800 }
     ]);
 
     // Chart dimensions
+    const maxUtilization = Math.max(...machineData.map(machine => machine.utilization));
     const chartWidth = 470;
     const chartHeight = 300;
     const margin = { top: 20, right: 20, bottom: 40, left: 40 };
@@ -49,36 +50,36 @@ const MachineUtilizationChart = () => {
         setSelectedPeriod(value);
         if (value === '2024') {
             setMachineData([
-                { id: 'M1', utilization: 95.00 },
-                { id: 'M2', utilization: 88.00 },
-                { id: 'M3', utilization: 92.00 },
-                { id: 'M4', utilization: 75.00 },
-                { id: 'M5', utilization: 65.00 },
-                { id: 'M6', utilization: 98.00 },
-                { id: 'M7', utilization: 82.00 },
-                { id: 'M8', utilization: 45.00 }
+                { id: 'M1', utilization: 15200 },
+                { id: 'M2', utilization: 67800 },
+                { id: 'M3', utilization: 45000 },
+                { id: 'M4', utilization: 99800 },
+                { id: 'M5', utilization: 23400 },
+                { id: 'M6', utilization: 86500 },
+                { id: 'M7', utilization: 39200 },
+                { id: 'M8', utilization: 11800 }
             ]);
         } else if (value === 'current') {
             setMachineData([
-                { id: 'M1', utilization: 93.75 },
-                { id: 'M2', utilization: 85.00 },
-                { id: 'M3', utilization: 90.00 },
-                { id: 'M4', utilization: 70.00 },
-                { id: 'M5', utilization: 60.00 },
-                { id: 'M6', utilization: 97.50 },
-                { id: 'M7', utilization: 80.00 },
-                { id: 'M8', utilization: 40.00 }
+                { id: 'M1', utilization: 83500 }, // Machine Cost in ₹ or $
+                { id: 'M2', utilization: 48900 },
+                { id: 'M3', utilization: 73200 },
+                { id: 'M4', utilization: 15400 },
+                { id: 'M5', utilization: 9960 },
+                { id: 'M6', utilization: 92000 },
+                { id: 'M7', utilization: 36250 },
+                { id: 'M8', utilization: 12800 }
             ]);
         }
     }
 
     return (
-        <div>
-            <div className="card-container anup machineutilization" style={{ height: "27rem", border: '1px solid #dee2e6' }}>
+        <div className='col-lg-6 col-md-6 col-12'>
+            <div className="card-container " style={{ border: '1px solid #dee2e6' }}>
                 <div className="card-body">
                     {/* Header */}
                     <div className="mb-3 d-flex justify-content-between align-items-center">
-                        <h6 className="card-title mb-1 fw-bold text-dark">Machine Utilization %</h6>
+                        <h6 className="card-title mb-1 fw-bold text-dark">Machine Cost ₹</h6>
                         <select
                             className="form-select form-select-sm mb-1"
                             style={{ width: '75px', fontSize: '10px', padding: '2px 4px' }}
@@ -113,7 +114,7 @@ const MachineUtilizationChart = () => {
                                             fontSize="10"
                                             fill="#6c757d"
                                         >
-                                            {tick}
+                                            {tick}K
                                         </text>
                                     </g>
                                 ))}
@@ -121,7 +122,7 @@ const MachineUtilizationChart = () => {
                                 {/* Bars */}
                                 {machineData.map((machine, index) => {
                                     const x = margin.left + index * (barWidth + barSpacing) + barSpacing / 2;
-                                    const barHeight = (machine.utilization / 100) * innerHeight;
+                                    const barHeight = (machine.utilization / maxUtilization) * innerHeight;
                                     const y = margin.top + innerHeight - barHeight;
 
                                     return (
@@ -133,7 +134,7 @@ const MachineUtilizationChart = () => {
                                                 y={y}
                                                 width={barWidth}
                                                 height={barHeight}
-                                                fill="#0d6efd"
+                                                fill="#07e09fff"
                                                 rx="2"
                                                 onMouseEnter={() => setHovered(true)}
                                                 onMouseLeave={() => setHovered(false)}
@@ -163,7 +164,7 @@ const MachineUtilizationChart = () => {
                                     fill="#6c757d"
                                     transform={`rotate(-90, 15, ${margin.top + innerHeight / 2})`}
                                 >
-                                    percentages %
+                                    Cost ₹
                                 </text>
                             </svg>
                         </div>
@@ -175,23 +176,23 @@ const MachineUtilizationChart = () => {
                             <div className="col-4">
                                 <div className="text-center">
                                     <div className="fw-bold text-dark" style={{ fontSize: '14px' }}>
-                                        {Math.max(...machineData.map(m => m.utilization)).toFixed(0)}%
+                                        ₹{Math.max(...machineData.map(m => m.utilization)).toFixed(0)}
                                     </div>
-                                    <div className="text-muted" style={{ fontSize: '10px' }}>Peak</div>
+                                    <div className="text-muted" style={{ fontSize: '10px' }}>Highest</div>
                                 </div>
                             </div>
                             <div className="col-4">
                                 <div className="text-center">
                                     <div className="fw-bold text-dark" style={{ fontSize: '14px' }}>
-                                        {machineData.filter(m => m.utilization >= 80).length}
+                                        {machineData.filter(m => m.utilization >= 50000).length}
                                     </div>
-                                    <div className="text-muted" style={{ fontSize: '10px' }}>Above 80%</div>
+                                    <div className="text-muted" style={{ fontSize: '10px' }}>Above 50K</div>
                                 </div>
                             </div>
                             <div className="col-4">
                                 <div className="text-center">
                                     <div className="fw-bold text-dark" style={{ fontSize: '14px' }}>
-                                        {Math.min(...machineData.map(m => m.utilization)).toFixed(0)}%
+                                        ₹{Math.min(...machineData.map(m => m.utilization)).toFixed(0)}
                                     </div>
                                     <div className="text-muted" style={{ fontSize: '10px' }}>Lowest</div>
                                 </div>
@@ -205,4 +206,4 @@ const MachineUtilizationChart = () => {
     );
 };
 
-export default MachineUtilizationChart;
+export default MachineCostChart;

@@ -79,7 +79,7 @@ const ScheduleAdherenceChart = () => {
 
 
                     {/* SVG Line Chart */}
-                    <div className="d-flex justify-content-center align-items-center" style={{overflow:"scroll"}}>
+                    <div className="d-flex" style={{overflow:"scroll"}}>
                         <div style={{width:"fit-content"}}>
 
                             <svg

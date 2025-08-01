@@ -48,7 +48,7 @@ const WorkOrderDelayChart = () => {
 
 
     return (
-        <div className='prodcharts'>
+        <div className='workdelay'>
             <div className="card-container anup">
                 <div className="card-body " style={{  height: "25rem" }}>
                     {/* Header */}

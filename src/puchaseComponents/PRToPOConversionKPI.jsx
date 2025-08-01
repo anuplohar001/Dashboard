@@ -84,7 +84,7 @@ const PRToPOConversionKPI = () => {
     return (
         <div>
             <div
-                className="card-container anup purchasecards"
+                className="card-container anup avgpurchase"
                 style={{
                     border: '1px solid #dee2e6',
                     transition: 'all 0.3s ease',

@@ -1,11 +1,20 @@
 /* Small devices */
 @media (max-width: 600px) {
 
+    .avgpurchase,
+    .pendingquote,
+    .machineutilization,
+    .wipload,
+    .workdelay,
+    .operatorwise,
+    .planvsactual,
     .smallpie,
     .barpareto,
     .totalorders,
     .toppareto,
+    .defectrate,
     .prodcharts,
+    .prodchart,
     .mycards,
     .salescards,
     .saleslines,
@@ -24,8 +33,9 @@
 }
 
 /* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1114px) {
 
+    .prodchart,
     .tables,
     .paretocharts,
     .oee,
@@ -38,6 +48,7 @@
         width: 90vw;
     }
 
+    .defectrate,
     .prodcharts {
         width: 45vw;
     }
@@ -58,21 +69,63 @@
     .salestopcustomers {
         width: 43vw;
     }
+
+    .purchasecards{
+        width: 45vw;
+    }
+
+    .avgpurchase{
+        width: 90vw;
+    }
+
+    /* changes made */
+
+    .planvsactual,
+    .machineutilization,
+    .operatorwise,
+    .wipload,
+    .defectrate {
+        width: 45vw;
+    }
+
+    .workdelay {
+        width: 45vw;
+    }
+
+    .salescards {
+        width: 45vw;
+    }
+
+    .pendingquote {
+        width: 90vw;
+    }
 }
 
-@media (min-width: 1110px) {
+@media (min-width: 1115px) {
 
 
     .revenuecurrent {
-        width: 48vw;
+        width: 38vw;
     }
 
     .linechart {
-        width: 49vw;
+        width: 35vw;
+    }
+
+    .mycards {
+        width: 21vw;
+    }
+
+    .wodelay {
+        width: 18vw;
     }
 
     .totalorders {
-        width: 42vw;
+        width: 38vw;
+    }
+
+    .prodchart{
+        width: 70vw;
     }
 
     .barpareto {
@@ -80,15 +133,15 @@
     }
 
     .oee {
-        width: 49vw;
+        width: 37vw;
     }
 
     .totalrevenue {
-        width: 45vw;
+        width: 38vw;
     }
 
     .topcustomers {
-        width: 55vw;
+        width: 43vw;
     }
 
     /* Product Management */
@@ -100,27 +153,23 @@
     }
 
     .scheduleadhe {
-        width: 55vw;
+        width: 48vw;
     }
 
     .planvsactual {
-        width: 28vw;
-    }
-
-    .machineutilization {
-        width: 36vw;
+        width: 24vw;
     }
 
     .salestopcustomers {
-        width: 42vw;
+        width: 35vw;
     }
 
     .saleslines {
-        width: 68vw;
+        width: 58vw;
     }
 
     .pendingquote {
-        width: 40vw;
+        width: 35vw;
     }
 
     .onlycards {
@@ -128,10 +177,45 @@
     }
 
     .salesbars {
-        width: 33vw;
+        width: 28vw;
     }
 
     .salescards {
+        width: 20vw;
+    }
+
+
+
+    /* changes */
+
+
+    .defectrate,
+    .prodcharts {
         width: 25vw;
+    }
+
+    .machineutilization {
+        width: 35vw;
+    }
+
+    .workdelay {
+        width: 39vw;
+    }
+
+    .operatorwise {
+        width: 24vw;
+    }
+
+    .wipload {
+        width: 24vw;
+    }
+
+
+    .purchasecards {
+        width: 19vw;
+    }
+
+    .avgpurchase {
+        width: 35vw;
     }
 }

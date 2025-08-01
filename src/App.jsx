@@ -8,6 +8,8 @@ import HomePage from './Home';
 import SalesManagement from './pages/SalesManagement';
 import PurchaseManagement from './pages/PurchaseManagement';
 import MaintenanceHead from './pages/MaintenanceHead';
+import Dashboard from './rutujaK/Dashboard';
+import Navbar from './Navbar';
 export default function App() {
   return (
 
@@ -19,6 +21,7 @@ export default function App() {
         <Route path="/salesmanagement" element={<SalesManagement />} />
         <Route path="/purchasemanagement" element={<PurchaseManagement />} />
         <Route path="/maintenancehead" element={<MaintenanceHead />} />
+        <Route path="/rutujadash" element={<Dashboard />} />
       </Routes>
     </div>
 

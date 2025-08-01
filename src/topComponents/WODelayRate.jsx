@@ -20,8 +20,8 @@ const WODelayRate = ({ data, expandedCard }) => {
     };
 
     return (
-        <div className=''>
-            <div className="mycards card-container" style={{ height: "18.5rem"}}>
+        <div className='wodelay mycards'>
+            <div className=" card-container" style={{ height: "18.5rem"}}>
                 <div className='row flex-column'>
                     <strong>WO Delay Rate</strong>
 

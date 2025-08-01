@@ -92,8 +92,8 @@ const SupplierScorecard = () => {
     };
 
     return (
-        <div className="" >
-            <div className="card purchasecards p-1" style={{ height: '42rem' }}>
+        <div className="avgpurchase" >
+            <div className="card-container p-1" style={{ height: '42rem' }}>
                 <h6 className=" p-3">Supplier Scorecard - Top 3 Vendors</h6>
                 <div className=" d-flex flex-column p-2" style={{overflow:"scroll"}}>
 

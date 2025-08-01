@@ -82,8 +82,8 @@ const OperatorPerformanceChart = () => {
     };
 
     return (
-        <div className='prodcharts '>
-            <div className="card-container anup operatorperformance" style={{ border: '1px solid #dee2e6' }}>
+        <div className='operatorwise '>
+            <div className="card-container anup" style={{ border: '1px solid #dee2e6' }}>
                 <div className=" d-flex flex-column justify-content-center align-items-center" style={{ overflow: 'scroll'}}>
                     {/* Title */}
                     <div className="mb-3 d-flex justify-content-evenly align-items-center" style={{ width: '100%' }}>
